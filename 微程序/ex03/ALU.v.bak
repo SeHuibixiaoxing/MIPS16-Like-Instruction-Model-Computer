@@ -1,0 +1,26 @@
+module ALU(
+	input M ,
+	input S0 ,
+	input S1 ,
+	input S2 ,
+	input S3 ,
+	input[15:0] A ,
+	input[15:0] B ,
+	input CN ,
+	output CN4,
+	output[15:0] P
+);
+
+ADD16 add(
+		.A(A),				
+		.B(B),				
+		.S0(S0),
+		.S1(S1),
+		.S2(S2),
+		.S3(S3),
+		.M(M),						
+		.CN(CN) ,				
+		.F(F)
+);
+
+

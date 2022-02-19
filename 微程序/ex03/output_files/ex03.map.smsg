@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at CPU.v(4): object "CLK" differs only in case from object "clk" in the same scope File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 4
+Info (10281): Verilog HDL Declaration information at CPU.v(119): object "CPR" differs only in case from object "cpr" in the same scope File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 119

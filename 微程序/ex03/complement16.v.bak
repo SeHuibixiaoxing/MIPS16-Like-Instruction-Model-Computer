@@ -1,0 +1,11 @@
+module complement16(
+	input wire[15:0] A,
+	output wire[15:0] B
+)
+
+always @(*) begin
+
+end
+
+endmodule
+

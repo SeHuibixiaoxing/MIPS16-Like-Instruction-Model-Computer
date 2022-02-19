@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at ALU16.v(17): object "numA" differs only in case from object "NUMA" in the same scope
+Info (10281): Verilog HDL Declaration information at CPU.v(134): object "CPR" differs only in case from object "cpr" in the same scope

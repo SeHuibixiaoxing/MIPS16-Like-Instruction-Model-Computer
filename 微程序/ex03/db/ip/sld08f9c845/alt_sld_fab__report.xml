@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2021.06.03.22:22:50"
+ outputDirectory="F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/db/ip/sld08f9c845/">
+ <perimeter>
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="nodes" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="nodes_send" direction="input" role="send" width="31" />
+   <port name="nodes_receive" direction="output" role="receive" width="31" />
+  </interface>
+  <interface name="hub" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="hub_tck" direction="input" role="tck" width="1" />
+   <port name="hub_tms" direction="input" role="tms" width="1" />
+   <port name="hub_tdi" direction="input" role="tdi" width="1" />
+   <port name="hub_tdo" direction="output" role="tdo" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="alt_sld_fab:1.0:AUTO_DEVICE=,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=(alt_sld_fab:20.1:AGENTS=,AUTO_DEVICE=Unknown,AUTO_DEVICE_SPEEDGRADE=Unknown,CLOCKS={id {} } ,COMPOSED_SETTINGS={fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 bridge_agent 0 prefer_host {} } ,DESIGN_HASH=395c9d823c01b5b75727,DEVICE_FAMILY=Cyclone IV E,EP_INFOS={hpath {CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|sld_mod_ram_rom:mgl_prim2} } ,MAX_WIDTH=31,MIRROR=0,NODE_COUNT=1,SETTINGS={fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 psig 9b67919e} ,TOP_HUB=1(altera_super_splitter:20.1:MAX_WIDTH=31,RECEIVE_WIDTHS=31,SEND_WIDTHS=10)(altera_sld_splitter:20.1:ADD_INTERFACE_ASGN=0,EXAMPLE=,FRAGMENTS={{name clock type clock dir end ports { {tck clk in 1 0} } } {name node type conduit dir end ports { {tms tms in 1 1} {tdi tdi in 1 2} {tdo tdo out 1 0} {ena ena in 1 3} {usr1 usr1 in 1 4} {clr clr in 1 5} {clrn clrn in 1 6} {jtag_state_tlr jtag_state_tlr in 1 7} {jtag_state_rti jtag_state_rti in 1 8} {jtag_state_sdrs jtag_state_sdrs in 1 9} {jtag_state_cdr jtag_state_cdr in 1 10} {jtag_state_sdr jtag_state_sdr in 1 11} {jtag_state_e1dr jtag_state_e1dr in 1 12} {jtag_state_pdr jtag_state_pdr in 1 13} {jtag_state_e2dr jtag_state_e2dr in 1 14} {jtag_state_udr jtag_state_udr in 1 15} {jtag_state_sirs jtag_state_sirs in 1 16} {jtag_state_cir jtag_state_cir in 1 17} {jtag_state_sir jtag_state_sir in 1 18} {jtag_state_e1ir jtag_state_e1ir in 1 19} {jtag_state_pir jtag_state_pir in 1 20} {jtag_state_e2ir jtag_state_e2ir in 1 21} {jtag_state_uir jtag_state_uir in 1 22} {ir_in ir_in in 8 23} {irq irq out 1 1} {ir_out ir_out out 8 2} } clock clock assign {debug.controlledBy {link_0} } moduleassign {debug.virtualInterface.link_0 {debug.endpointLink {fabric sld index 1} } } } } )(altera_jtag_pins_bridge:20.1:)(altera_sld_jtag_hub:20.1:BROADCAST_FEATURE=0,COMPILATION_MODE=0,CONN_INDEX=0,COUNT=1,DEVICE_FAMILY=Cyclone IV E,ENABLE_SOFT_CORE_CONTROLLER=0,FORCE_IR_CAPTURE_FEATURE=1,FORCE_PRE_1_4_FEATURE=0,NEGEDGE_TDO_LATCH=1,NODE_INFO=00010000000110000110111000000000,N_NODE_IR_BITS=8,N_SEL_BITS=1,SETTINGS={mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 bridge_agent 0 prefer_host {} } ,TOP_HUB=1)(altera_connection_identification_hub:20.1:COUNT=1,DESIGN_HASH=395c9d823c01b5b75727,SETTINGS={width 4 latency 0} )(conduit:20.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:20.1:)(conduit:20.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:20.1:)(conduit:20.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:20.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0))"
+   instancePathKey="alt_sld_fab"
+   kind="alt_sld_fab"
+   version="1.0"
+   name="alt_sld_fab">
+  <parameter name="AUTO_DEVICE" value="" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="" />
+  <generatedFiles>
+   <file
+       path="F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/db/ip/sld08f9c845/alt_sld_fab.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/db/ip/sld08f9c845/alt_sld_fab_wrapper_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="F:/quartus20.1.1/quartus20.1/ip/altera/sld/core/altera_instrumentation_fabric/alt_sld_fab_hw.tcl" />
+   <file
+       path="F:/Quartus20.1.1/Quartus20.1/ip/altera/sld/core/altera_instrumentation_fabric/com.altera.superfabric.jar" />
+   <file
+       path="F:/Quartus20.1.1/Quartus20.1/quartus/sopc_builder/model/lib/com.altera.utilities.jar" />
+   <file
+       path="F:/Quartus20.1.1/Quartus20.1/quartus/sopc_builder/model/lib/hamcrest-all-1.3.jar" />
+   <file
+       path="F:/Quartus20.1.1/Quartus20.1/quartus/sopc_builder/model/lib/commons-lang3-3.1.jar" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="alt_sld_fab">queue size: 0 starting:alt_sld_fab "alt_sld_fab"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="alt_sld_fab"><![CDATA["<b>alt_sld_fab</b>" reuses <b>alt_sld_fab</b> "<b>submodules/alt_sld_fab_alt_sld_fab</b>"]]></message>
+   <message level="Error" culprit="alt_sld_fab">Exception during generation: C:\Users\&#29579;&#27901;&#23431;\AppData\Local\Temp\alt8781_4563335707182458437.dir\0003_Temp\5471191230.txt</message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="alt_sld_fab:20.1:AGENTS=,AUTO_DEVICE=Unknown,AUTO_DEVICE_SPEEDGRADE=Unknown,CLOCKS={id {} } ,COMPOSED_SETTINGS={fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 bridge_agent 0 prefer_host {} } ,DESIGN_HASH=395c9d823c01b5b75727,DEVICE_FAMILY=Cyclone IV E,EP_INFOS={hpath {CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|sld_mod_ram_rom:mgl_prim2} } ,MAX_WIDTH=31,MIRROR=0,NODE_COUNT=1,SETTINGS={fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 psig 9b67919e} ,TOP_HUB=1(altera_super_splitter:20.1:MAX_WIDTH=31,RECEIVE_WIDTHS=31,SEND_WIDTHS=10)(altera_sld_splitter:20.1:ADD_INTERFACE_ASGN=0,EXAMPLE=,FRAGMENTS={{name clock type clock dir end ports { {tck clk in 1 0} } } {name node type conduit dir end ports { {tms tms in 1 1} {tdi tdi in 1 2} {tdo tdo out 1 0} {ena ena in 1 3} {usr1 usr1 in 1 4} {clr clr in 1 5} {clrn clrn in 1 6} {jtag_state_tlr jtag_state_tlr in 1 7} {jtag_state_rti jtag_state_rti in 1 8} {jtag_state_sdrs jtag_state_sdrs in 1 9} {jtag_state_cdr jtag_state_cdr in 1 10} {jtag_state_sdr jtag_state_sdr in 1 11} {jtag_state_e1dr jtag_state_e1dr in 1 12} {jtag_state_pdr jtag_state_pdr in 1 13} {jtag_state_e2dr jtag_state_e2dr in 1 14} {jtag_state_udr jtag_state_udr in 1 15} {jtag_state_sirs jtag_state_sirs in 1 16} {jtag_state_cir jtag_state_cir in 1 17} {jtag_state_sir jtag_state_sir in 1 18} {jtag_state_e1ir jtag_state_e1ir in 1 19} {jtag_state_pir jtag_state_pir in 1 20} {jtag_state_e2ir jtag_state_e2ir in 1 21} {jtag_state_uir jtag_state_uir in 1 22} {ir_in ir_in in 8 23} {irq irq out 1 1} {ir_out ir_out out 8 2} } clock clock assign {debug.controlledBy {link_0} } moduleassign {debug.virtualInterface.link_0 {debug.endpointLink {fabric sld index 1} } } } } )(altera_jtag_pins_bridge:20.1:)(altera_sld_jtag_hub:20.1:BROADCAST_FEATURE=0,COMPILATION_MODE=0,CONN_INDEX=0,COUNT=1,DEVICE_FAMILY=Cyclone IV E,ENABLE_SOFT_CORE_CONTROLLER=0,FORCE_IR_CAPTURE_FEATURE=1,FORCE_PRE_1_4_FEATURE=0,NEGEDGE_TDO_LATCH=1,NODE_INFO=00010000000110000110111000000000,N_NODE_IR_BITS=8,N_SEL_BITS=1,SETTINGS={mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 bridge_agent 0 prefer_host {} } ,TOP_HUB=1)(altera_connection_identification_hub:20.1:COUNT=1,DESIGN_HASH=395c9d823c01b5b75727,SETTINGS={width 4 latency 0} )(conduit:20.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:20.1:)(conduit:20.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(clock:20.1:)(conduit:20.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(conduit:20.1:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)"
+   instancePathKey="alt_sld_fab:.:alt_sld_fab"
+   kind="alt_sld_fab"
+   version="20.1"
+   name="alt_sld_fab_alt_sld_fab">
+  <parameter name="MAX_WIDTH" value="31" />
+  <parameter name="TOP_HUB" value="1" />
+  <parameter name="DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter
+     name="SETTINGS"
+     value="{fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 psig 9b67919e} " />
+  <parameter name="CLOCKS" value="{id {} } " />
+  <parameter name="DESIGN_HASH" value="395c9d823c01b5b75727" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="Unknown" />
+  <parameter name="MIRROR" value="0" />
+  <parameter
+     name="COMPOSED_SETTINGS"
+     value="{fabric sld dir agent mfr_code 110 type_code 3 version 2 instance 0 ir_width 8 bridge_agent 0 prefer_host {} } " />
+  <parameter name="AUTO_DEVICE" value="Unknown" />
+  <parameter
+     name="EP_INFOS"
+     value="{hpath {CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|sld_mod_ram_rom:mgl_prim2} } " />
+  <parameter name="AGENTS" value="" />
+  <parameter name="NODE_COUNT" value="1" />
+  <generatedFiles/>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="F:/quartus20.1.1/quartus20.1/ip/altera/sld/core/altera_instrumentation_fabric/alt_sld_fab_hw.tcl" />
+   <file
+       path="F:/Quartus20.1.1/Quartus20.1/ip/altera/sld/core/altera_instrumentation_fabric/com.altera.superfabric.jar" />
+   <file
+       path="F:/Quartus20.1.1/Quartus20.1/quartus/sopc_builder/model/lib/com.altera.utilities.jar" />
+   <file
+       path="F:/Quartus20.1.1/Quartus20.1/quartus/sopc_builder/model/lib/hamcrest-all-1.3.jar" />
+   <file
+       path="F:/Quartus20.1.1/Quartus20.1/quartus/sopc_builder/model/lib/commons-lang3-3.1.jar" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="alt_sld_fab" as="alt_sld_fab" />
+  <messages/>
+ </entity>
+</deploy>

@@ -1,0 +1,989 @@
+Analysis & Synthesis report for ex03
+Thu Jun 03 22:22:51 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis IP Cores Summary
+  6. Source assignments for CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|altsyncram_qva2:altsyncram1
+  7. Source assignments for CPU:cpu|rom:ROM1|altsyncram:altsyncram_component|altsyncram_hm91:auto_generated
+  8. Parameter Settings for User Entity Instance: CPU:cpu|ram:RAM|altsyncram:altsyncram_component
+  9. Parameter Settings for User Entity Instance: CPU:cpu|rom:ROM1|altsyncram:altsyncram_component
+ 10. Port Connectivity Checks: "CPU:cpu|rom:ROM1"
+ 11. Port Connectivity Checks: "CPU:cpu|ALU:comb_947|multiplication16:comb_22|multi16row:union[15].row"
+ 12. Port Connectivity Checks: "CPU:cpu|ALU:comb_947|multiplication16:comb_22|multi16row:union[0].row|multiunit:union[0].unit"
+ 13. Port Connectivity Checks: "CPU:cpu|ALU:comb_947|multiplication16:comb_22|multi16row:union[0].row"
+ 14. Port Connectivity Checks: "CPU:cpu|ALU:comb_947|complement16:complement_multi_out"
+ 15. Port Connectivity Checks: "CPU:cpu|ALU:comb_947|complement16:complementB"
+ 16. Port Connectivity Checks: "CPU:cpu|ALU:comb_947|complement16:complementA"
+ 17. Port Connectivity Checks: "CPU:cpu|ALU:comb_947"
+ 18. Port Connectivity Checks: "CPU:cpu|selector8:select_B"
+ 19. Port Connectivity Checks: "CPU:cpu|register16:R_add_register_0|74173:register8_4"
+ 20. Port Connectivity Checks: "CPU:cpu|register16:R_add_register_0|74173:register8_3"
+ 21. Port Connectivity Checks: "CPU:cpu|register16:R_add_register_0|74173:register8_2"
+ 22. Port Connectivity Checks: "CPU:cpu|register16:R_add_register_0|74173:register8_1"
+ 23. Port Connectivity Checks: "CPU:cpu|register16:R_add_register_0"
+ 24. Port Connectivity Checks: "CPU:cpu|clock3:make_clock3"
+ 25. Port Connectivity Checks: "CPU:cpu"
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Thu Jun 03 22:22:51 2021           ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; ex03                                        ;
+; Top-level Entity Name              ; ex03                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                            ; ex03               ; ex03               ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                    ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance        ; IP Include File ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
+; Altera ; RAM: 1-PORT  ; 13.1    ; N/A          ; N/A          ; |ex03|CPU:cpu|ram:RAM  ; ram.v           ;
+; Altera ; ROM: 1-PORT  ; 13.1    ; N/A          ; N/A          ; |ex03|CPU:cpu|rom:ROM1 ; rom.v           ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|altsyncram_qva2:altsyncram1 ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                  ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                   ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Source assignments for CPU:cpu|rom:ROM1|altsyncram:altsyncram_component|altsyncram_hm91:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                       ;
++---------------------------------+--------------------+------+------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                        ;
++---------------------------------+--------------------+------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:cpu|ram:RAM|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------------+
+; Parameter Name                     ; Value                ; Type                             ;
++------------------------------------+----------------------+----------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                          ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                   ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                          ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                          ;
+; WIDTH_A                            ; 16                   ; Signed Integer                   ;
+; WIDTHAD_A                          ; 10                   ; Signed Integer                   ;
+; NUMWORDS_A                         ; 1024                 ; Signed Integer                   ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                          ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                          ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                          ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                          ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                          ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                          ;
+; WIDTH_B                            ; 1                    ; Untyped                          ;
+; WIDTHAD_B                          ; 1                    ; Untyped                          ;
+; NUMWORDS_B                         ; 1                    ; Untyped                          ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                          ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                          ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                          ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                          ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                          ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                          ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                          ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                          ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                          ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                          ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                          ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                          ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                   ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                          ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                          ;
+; BYTE_SIZE                          ; 8                    ; Untyped                          ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                          ;
+; INIT_FILE                          ; ram.mif              ; Untyped                          ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                          ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                          ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                          ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                          ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                          ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                          ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                          ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                          ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                          ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                          ;
+; CBXI_PARAMETER                     ; altsyncram_akk1      ; Untyped                          ;
++------------------------------------+----------------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:cpu|rom:ROM1|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------+
+; Parameter Name                     ; Value                ; Type                              ;
++------------------------------------+----------------------+-----------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                           ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                    ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                           ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                           ;
+; WIDTH_A                            ; 64                   ; Signed Integer                    ;
+; WIDTHAD_A                          ; 9                    ; Signed Integer                    ;
+; NUMWORDS_A                         ; 512                  ; Signed Integer                    ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                           ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                           ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                           ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                           ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                           ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                           ;
+; WIDTH_B                            ; 1                    ; Untyped                           ;
+; WIDTHAD_B                          ; 1                    ; Untyped                           ;
+; NUMWORDS_B                         ; 1                    ; Untyped                           ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                           ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                           ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                           ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                           ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                           ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                           ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                           ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                           ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                           ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                           ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                           ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                           ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                    ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                           ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                           ;
+; BYTE_SIZE                          ; 8                    ; Untyped                           ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                           ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                           ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                           ;
+; INIT_FILE                          ; rom.mif              ; Untyped                           ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                           ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                           ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                           ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                           ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                           ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                           ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                           ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                           ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                           ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                           ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                           ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                           ;
+; CBXI_PARAMETER                     ; altsyncram_hm91      ; Untyped                           ;
++------------------------------------+----------------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|rom:ROM1"                                                                        ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; q[63..48] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|ALU:comb_947|multiplication16:comb_22|multi16row:union[15].row"             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; M4   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|ALU:comb_947|multiplication16:comb_22|multi16row:union[0].row|multiunit:union[0].unit" ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                         ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+; C    ; Input ; Info     ; Stuck at GND                                                                                    ;
++------+-------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|ALU:comb_947|multiplication16:comb_22|multi16row:union[0].row" ;
++------+-------+----------+-------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                 ;
++------+-------+----------+-------------------------------------------------------------------------+
+; M    ; Input ; Info     ; Stuck at GND                                                            ;
++------+-------+----------+-------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|ALU:comb_947|complement16:complement_multi_out"                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; B    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|ALU:comb_947|complement16:complementB"                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; B    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|ALU:comb_947|complement16:complementA"                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; B    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|ALU:comb_947"                                                                ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; CNOUT ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|selector8:select_B"                                                                              ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; YY   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|register16:R_add_register_0|74173:register8_4"                                                                                                                               ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; G1N     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; G1N[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; G2N     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; G2N[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; MN      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; MN[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; NN      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NN[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|register16:R_add_register_0|74173:register8_3"                                                                                                                               ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; G1N     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; G1N[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; G2N     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; G2N[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; MN      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; MN[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; NN      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NN[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|register16:R_add_register_0|74173:register8_2"                                                                                                                               ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; G1N     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; G1N[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; G2N     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; G2N[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; MN      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; MN[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; NN      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NN[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|register16:R_add_register_0|74173:register8_1"                                                                                                                               ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; G1N     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; G1N[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; G2N     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; G2N[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; MN      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; MN[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; NN      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; NN[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|register16:R_add_register_0"                                                                                                                                                 ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; CLR     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; CLR[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|clock3:make_clock3"                                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q[2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu"                                                                                                                                                ;
++----------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port                 ; Type   ; Severity ; Details                                                                                                                                 ;
++----------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------+
+; jumpTagO             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; rden_RAMO            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; wren_RAMO            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; data_RAMO            ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "data_RAMO[15..1]" have no fanouts          ;
+; data_RAMO            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; address_RAMO         ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "address_RAMO[15..1]" have no fanouts       ;
+; address_RAMO         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; MARO                 ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "MARO[15..1]" have no fanouts               ;
+; MARO                 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; R5O                  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "R5O[15..1]" have no fanouts                ;
+; R5O                  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; R4O                  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "R4O[15..1]" have no fanouts                ;
+; R4O                  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; R3O                  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "R3O[15..1]" have no fanouts                ;
+; R3O                  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; RAO                  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "RAO[15..1]" have no fanouts                ;
+; RAO                  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; RBO                  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "RBO[15..1]" have no fanouts                ;
+; RBO                  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; CPR_select_control4O ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "CPR_select_control4O[3..1]" have no fanouts ;
+; CPR_select_control4O ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; CPR_select_control2O ; Output ; Warning  ; Output or bidir port (2 bits) is wider than the port expression (1 bits) it drives; bit(s) "CPR_select_control2O[1..1]" have no fanouts ;
+; CPR_select_control2O ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; CPR0O                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; CPR2O                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; R0O                  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "R0O[15..1]" have no fanouts                ;
+; R0O                  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; q_RAMO               ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "q_RAMO[15..1]" have no fanouts             ;
+; q_RAMO               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; selectAO             ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "selectAO[15..1]" have no fanouts           ;
+; selectAO             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; selectBO             ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "selectBO[15..1]" have no fanouts           ;
+; selectBO             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; ALU_FO               ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "ALU_FO[15..1]" have no fanouts             ;
+; ALU_FO               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; microInstructionO    ; Output ; Warning  ; Output or bidir port (9 bits) is wider than the port expression (1 bits) it drives; bit(s) "microInstructionO[8..1]" have no fanouts    ;
+; microInstructionO    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; next_micro_addressO  ; Output ; Warning  ; Output or bidir port (9 bits) is wider than the port expression (1 bits) it drives; bit(s) "next_micro_addressO[8..1]" have no fanouts  ;
+; next_micro_addressO  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; immediate8O          ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "immediate8O[15..1]" have no fanouts        ;
+; immediate8O          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; ALU_SO               ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (1 bits) it drives; bit(s) "ALU_SO[4..1]" have no fanouts               ;
+; ALU_SO               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; IRO                  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "IRO[15..1]" have no fanouts                ;
+; IRO                  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; R1O                  ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "R1O[15..1]" have no fanouts                ;
+; R1O                  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; CPIR0                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; select_control_A0    ; Output ; Warning  ; Output or bidir port (3 bits) is wider than the port expression (1 bits) it drives; bit(s) "select_control_A0[2..1]" have no fanouts    ;
+; select_control_A0    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; YYAO                 ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "YYAO[7..1]" have no fanouts                 ;
+; YYAO                 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; CPR_PO               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; CPR1O                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
+; R1_INO               ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "R1_INO[15..1]" have no fanouts             ;
+; R1_INO               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                     ;
++----------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Thu Jun 03 22:22:29 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ex03 -c ex03
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file register16.v
+    Info (12023): Found entity 1: register16 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at ex03.v(99): ignored dangling comma in List of Port Connections File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 99
+Info (12021): Found 1 design units, including 1 entities, in source file ex03.v
+    Info (12023): Found entity 1: ex03 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpu.v
+    Info (12023): Found entity 1: CPU File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file ram.v
+    Info (12023): Found entity 1: ram File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ram.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file selector8.v
+    Info (12023): Found entity 1: selector8 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/selector8.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file test.bdf
+    Info (12023): Found entity 1: test
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: ALU File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file shift16.v
+    Info (12023): Found entity 1: shift16 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/shift16.v Line: 2
+Warning (12019): Can't analyze file -- file complement.v is missing
+Warning (10463): Verilog HDL Declaration warning at multiplication16.v(16): "union" is SystemVerilog-2005 keyword File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/multiplication16.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file multiplication16.v
+    Info (12023): Found entity 1: multiplication16 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/multiplication16.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file add1.v
+    Info (12023): Found entity 1: add1 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/add1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiunit.v
+    Info (12023): Found entity 1: multiunit File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/multiunit.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at multi16row.v(17): "union" is SystemVerilog-2005 keyword File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/multi16row.v Line: 17
+Warning (10275): Verilog HDL Module Instantiation warning at multi16row.v(26): ignored dangling comma in List of Port Connections File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/multi16row.v Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file multi16row.v
+    Info (12023): Found entity 1: multi16row File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/multi16row.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file nextaddress.v
+    Info (12023): Found entity 1: nextAddress File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/nextAddress.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file threetoeight.v
+    Info (12023): Found entity 1: threeToEight File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file twotofour.v
+    Info (12023): Found entity 1: twoToFour File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/twoToFour.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file selector8_2.v
+    Info (12023): Found entity 1: selector8_2 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/selector8_2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file block1.bdf
+    Info (12023): Found entity 1: Block1
+Info (12021): Found 1 design units, including 1 entities, in source file rom.v
+    Info (12023): Found entity 1: rom File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/rom.v Line: 39
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(50): created implicit net for "CLR" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 50
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(54): created implicit net for "jumpTagO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 54
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(55): created implicit net for "rden_RAMO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 55
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(56): created implicit net for "wren_RAMO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 56
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(57): created implicit net for "data_RAMO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 57
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(58): created implicit net for "address_RAMO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 58
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(59): created implicit net for "MARO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 59
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(62): created implicit net for "R5O" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 62
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(63): created implicit net for "R4O" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 63
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(64): created implicit net for "R3O" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 64
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(65): created implicit net for "RAO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 65
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(66): created implicit net for "RBO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 66
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(67): created implicit net for "CPR_select_control4O" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 67
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(68): created implicit net for "CPR_select_control2O" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 68
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(69): created implicit net for "CPR0O" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 69
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(70): created implicit net for "CPR2O" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 70
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(71): created implicit net for "R0O" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 71
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(72): created implicit net for "q_RAMO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 72
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(73): created implicit net for "selectAO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 73
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(74): created implicit net for "selectBO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 74
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(75): created implicit net for "ALU_FO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 75
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(76): created implicit net for "microInstructionO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 76
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(79): created implicit net for "next_micro_addressO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 79
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(81): created implicit net for "immediate8O" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 81
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(83): created implicit net for "ALU_SO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 83
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(85): created implicit net for "IRO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 85
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(86): created implicit net for "R1O" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 86
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(87): created implicit net for "CPIR0" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 87
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(88): created implicit net for "select_control_A0" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 88
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(89): created implicit net for "YYAO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 89
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(90): created implicit net for "CPR_PO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 90
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(91): created implicit net for "CPR1O" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 91
+Warning (10236): Verilog HDL Implicit Net warning at ex03.v(92): created implicit net for "R1_INO" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 92
+Critical Warning (10846): Verilog HDL Instantiation warning at ALU.v(45): instance has no name File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 45
+Critical Warning (10846): Verilog HDL Instantiation warning at ALU.v(53): instance has no name File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 53
+Critical Warning (10846): Verilog HDL Instantiation warning at ALU.v(76): instance has no name File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 76
+Critical Warning (10846): Verilog HDL Instantiation warning at CPU.v(433): instance has no name File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 433
+Info (12127): Elaborating entity "ex03" for the top level hierarchy
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:cpu" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ex03.v Line: 99
+Warning (12125): Using design file clock3.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: clock3 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/clock3.v Line: 1
+Info (12128): Elaborating entity "clock3" for hierarchy "CPU:cpu|clock3:make_clock3" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 106
+Info (12128): Elaborating entity "threeToEight" for hierarchy "CPU:cpu|threeToEight:cpr_three_eight1" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 136
+Info (12128): Elaborating entity "74138" for hierarchy "CPU:cpu|threeToEight:cpr_three_eight1|74138:three_eight_translator1" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Info (12130): Elaborated megafunction instantiation "CPU:cpu|threeToEight:cpr_three_eight1|74138:three_eight_translator1" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Info (12128): Elaborating entity "twoToFour" for hierarchy "CPU:cpu|twoToFour:cpr_tow_four1" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 153
+Info (12128): Elaborating entity "register16" for hierarchy "CPU:cpu|register16:R_add_register_0" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 258
+Warning (12090): Entity "74173" obtained from "74173.v" instead of from Quartus Prime megafunction library File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/74173.v Line: 20
+Warning (12125): Using design file 74173.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 74173 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/74173.v Line: 20
+Info (12128): Elaborating entity "74173" for hierarchy "CPU:cpu|register16:R_add_register_0|74173:register8_1" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Info (12128): Elaborating entity "selector8_2" for hierarchy "CPU:cpu|selector8_2:select_RA" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 283
+Info (12128): Elaborating entity "ram" for hierarchy "CPU:cpu|ram:RAM" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 333
+Info (12128): Elaborating entity "altsyncram" for hierarchy "CPU:cpu|ram:RAM|altsyncram:altsyncram_component" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ram.v Line: 88
+Info (12130): Elaborated megafunction instantiation "CPU:cpu|ram:RAM|altsyncram:altsyncram_component" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ram.v Line: 88
+Info (12133): Instantiated megafunction "CPU:cpu|ram:RAM|altsyncram:altsyncram_component" with the following parameter: File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ram.v Line: 88
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "ram.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=ram0"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "1024"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "10"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_akk1.tdf
+    Info (12023): Found entity 1: altsyncram_akk1 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/db/altsyncram_akk1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_akk1" for hierarchy "CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated" File: f:/quartus20.1.1/quartus20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qva2.tdf
+    Info (12023): Found entity 1: altsyncram_qva2 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/db/altsyncram_qva2.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_qva2" for hierarchy "CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|altsyncram_qva2:altsyncram1" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/db/altsyncram_akk1.tdf Line: 38
+Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/db/altsyncram_akk1.tdf Line: 39
+Info (12130): Elaborated megafunction instantiation "CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/db/altsyncram_akk1.tdf Line: 39
+Info (12133): Instantiated megafunction "CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/db/altsyncram_akk1.tdf Line: 39
+    Info (12134): Parameter "CVALUE" = "0000000000000000"
+    Info (12134): Parameter "IS_DATA_IN_RAM" = "1"
+    Info (12134): Parameter "IS_READABLE" = "1"
+    Info (12134): Parameter "NODE_NAME" = "1918987568"
+    Info (12134): Parameter "NUMWORDS" = "1024"
+    Info (12134): Parameter "SHIFT_COUNT_BITS" = "5"
+    Info (12134): Parameter "WIDTH_WORD" = "16"
+    Info (12134): Parameter "WIDTHAD" = "10"
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: f:/quartus20.1.1/quartus20.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: f:/quartus20.1.1/quartus20.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "CPU:cpu|ram:RAM|altsyncram:altsyncram_component|altsyncram_akk1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: f:/quartus20.1.1/quartus20.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
+Info (12128): Elaborating entity "selector8" for hierarchy "CPU:cpu|selector8:select_A" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 398
+Info (12128): Elaborating entity "ALU" for hierarchy "CPU:cpu|ALU:comb_947" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 433
+Warning (10230): Verilog HDL assignment warning at ALU.v(126): truncated value with size 32 to match size of target (17) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 126
+Warning (10230): Verilog HDL assignment warning at ALU.v(129): truncated value with size 32 to match size of target (17) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 129
+Warning (10230): Verilog HDL assignment warning at ALU.v(132): truncated value with size 32 to match size of target (17) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 132
+Warning (10230): Verilog HDL assignment warning at ALU.v(135): truncated value with size 32 to match size of target (17) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 135
+Warning (10230): Verilog HDL assignment warning at ALU.v(138): truncated value with size 32 to match size of target (17) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 138
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(195): variable "jumpTag" is read inside the Always Construct but isn't in the Always Construct's Event Control File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 195
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(198): variable "jumpTag" is read inside the Always Construct but isn't in the Always Construct's Event Control File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 198
+Warning (10270): Verilog HDL Case Statement warning at ALU.v(110): incomplete case statement has no default case item File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 110
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(109): inferring latch(es) for variable "F", which holds its previous value in one or more paths through the always construct File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(109): inferring latch(es) for variable "shift_direction", which holds its previous value in one or more paths through the always construct File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(109): inferring latch(es) for variable "CN4", which holds its previous value in one or more paths through the always construct File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "CN4" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "shift_direction" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[0]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[1]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[2]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[3]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[4]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[5]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[6]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[7]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[8]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[9]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[10]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[11]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[12]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[13]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[14]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (10041): Inferred latch for "F[15]" at ALU.v(109) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 109
+Info (12128): Elaborating entity "shift16" for hierarchy "CPU:cpu|ALU:comb_947|shift16:comb_20" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 45
+Warning (12125): Using design file complement16.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: complement16 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/complement16.v Line: 2
+Info (12128): Elaborating entity "complement16" for hierarchy "CPU:cpu|ALU:comb_947|complement16:complementA" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 61
+Info (12128): Elaborating entity "multiplication16" for hierarchy "CPU:cpu|ALU:comb_947|multiplication16:comb_22" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/ALU.v Line: 76
+Info (12128): Elaborating entity "multi16row" for hierarchy "CPU:cpu|ALU:comb_947|multiplication16:comb_22|multi16row:union[0].row" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/multiplication16.v Line: 24
+Info (12128): Elaborating entity "multiunit" for hierarchy "CPU:cpu|ALU:comb_947|multiplication16:comb_22|multi16row:union[0].row|multiunit:union[0].unit" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/multi16row.v Line: 26
+Info (12128): Elaborating entity "add1" for hierarchy "CPU:cpu|ALU:comb_947|multiplication16:comb_22|multi16row:union[0].row|multiunit:union[0].unit|add1:add" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/multiunit.v Line: 17
+Info (12128): Elaborating entity "nextAddress" for hierarchy "CPU:cpu|nextAddress:next_micro" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 467
+Warning (10230): Verilog HDL assignment warning at nextAddress.v(23): truncated value with size 32 to match size of target (9) File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/nextAddress.v Line: 23
+Info (12128): Elaborating entity "rom" for hierarchy "CPU:cpu|rom:ROM1" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/CPU.v Line: 475
+Info (12128): Elaborating entity "altsyncram" for hierarchy "CPU:cpu|rom:ROM1|altsyncram:altsyncram_component" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/rom.v Line: 81
+Info (12130): Elaborated megafunction instantiation "CPU:cpu|rom:ROM1|altsyncram:altsyncram_component" File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/rom.v Line: 81
+Info (12133): Instantiated megafunction "CPU:cpu|rom:ROM1|altsyncram:altsyncram_component" with the following parameter: File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/rom.v Line: 81
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "rom.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "512"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "9"
+    Info (12134): Parameter "width_a" = "64"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hm91.tdf
+    Info (12023): Found entity 1: altsyncram_hm91 File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/db/altsyncram_hm91.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_hm91" for hierarchy "CPU:cpu|rom:ROM1|altsyncram:altsyncram_component|altsyncram_hm91:auto_generated" File: f:/quartus20.1.1/quartus20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (12020): Port "G1" on the entity instantiation of "three_two_translator" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/selector8.v Line: 35
+Warning (12020): Port "G2AN" on the entity instantiation of "three_two_translator" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/selector8.v Line: 35
+Warning (12020): Port "G2BN" on the entity instantiation of "three_two_translator" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/selector8.v Line: 35
+Warning (12020): Port "G1" on the entity instantiation of "three_two_translator" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/selector8.v Line: 35
+Warning (12020): Port "G2AN" on the entity instantiation of "three_two_translator" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/selector8.v Line: 35
+Warning (12020): Port "G2BN" on the entity instantiation of "three_two_translator" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/selector8.v Line: 35
+Warning (12020): Port "G1N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G2N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "MN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "NN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G1N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G2N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "MN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "NN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G1N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G2N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "MN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "NN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G1N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G2N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "MN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "NN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G1N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G2N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "MN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "NN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G1N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G2N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "MN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "NN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G1N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G2N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "MN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "NN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G1N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G2N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "MN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "NN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G1N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G2N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "MN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "NN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G1N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G2N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "MN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "NN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G1N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G2N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "MN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "NN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G1N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G2N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "MN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "NN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G1N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G2N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "MN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "NN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G1N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G2N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "MN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "NN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G1N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G2N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "MN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "NN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G1N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G2N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "MN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "NN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G1N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G2N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "MN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "NN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G1N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G2N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "MN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "NN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G1N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G2N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "MN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "NN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G1N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G2N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "MN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "NN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G1N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G2N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "MN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "NN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G1N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G2N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "MN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "NN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G1N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G2N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "MN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "NN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G1N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G2N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "MN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "NN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G1N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G2N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "MN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "NN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G1N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G2N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "MN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "NN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G1N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G2N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "MN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "NN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G1N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G2N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "MN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "NN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G1N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G2N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "MN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "NN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G1N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G2N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "MN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "NN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G1N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G2N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "MN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "NN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G1N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G2N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "MN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "NN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G1N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G2N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "MN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "NN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G1N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G2N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "MN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "NN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G1N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G2N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "MN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "NN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G1N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G2N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "MN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "NN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G1N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G2N" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "MN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "NN" on the entity instantiation of "register8_4" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 74
+Warning (12020): Port "G1N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G2N" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "MN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "NN" on the entity instantiation of "register8_3" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 58
+Warning (12020): Port "G1N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G2N" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "MN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "NN" on the entity instantiation of "register8_2" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 42
+Warning (12020): Port "G1N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G2N" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "MN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "NN" on the entity instantiation of "register8_1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/register16.v Line: 25
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G1" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2AN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Warning (12020): Port "G2BN" on the entity instantiation of "three_eight_translator1" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/threeToEight.v Line: 30
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2021.06.03.22:22:42 Progress: Loading sld08f9c845/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Error (11176): Alt_sld_fab: Exception during generation: C:\Users\Õı‘Û”Ó\AppData\Local\Temp\alt8781_4563335707182458437.dir\0003_Temp\5471191230.txt
+Error (11176): Generation stopped, 1 or more modules remaining
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 2 modules, 1 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 0 design units, including 0 entities, in source file db/ip/sld08f9c845/alt_sld_fab.v
+Error (12154): Can't elaborate inferred hierarchy "sld_hub:auto_hub"
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/output_files/ex03.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 262 warnings
+    Error: Peak virtual memory: 4805 megabytes
+    Error: Processing ended: Thu Jun 03 22:22:51 2021
+    Error: Elapsed time: 00:00:22
+    Error: Total CPU time (on all processors): 00:00:39
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/Quartus20.1.1/Quartus20.1/CurriculumDesign/wzy/WeiChengXu/ex03/output_files/ex03.map.smsg.
+
+

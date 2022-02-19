@@ -1,0 +1,253 @@
+# do ex03.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ex03
+# 
+# Top level modules:
+# 	ex03
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ex03_vlg_sample_tst
+# -- Compiling module ex03_vlg_check_tst
+# -- Compiling module ex03_vlg_vec_tst
+# 
+# Top level modules:
+# 	ex03_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.ex03_vlg_vec_tst 
+# Loading work.ex03_vlg_vec_tst
+# Loading work.ex03
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_jtag
+# Loading work.ex03_vlg_sample_tst
+# Loading work.ex03_vlg_check_tst
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# 
+# Loading instances from ex03_v.sdo
+# ** Warning: (vsim-3017) Waveform1.vwf.vt(1495): [TFMPC] - Too few port connections. Expected 15, found 11.
+# 
+#         Region: /ex03_vlg_vec_tst/i1
+# ** Warning: (vsim-3722) Waveform1.vwf.vt(1495): [TFMPC] - Missing connection for port 'altera_reserved_tms'.
+# 
+# ** Warning: (vsim-3722) Waveform1.vwf.vt(1495): [TFMPC] - Missing connection for port 'altera_reserved_tck'.
+# 
+# ** Warning: (vsim-3722) Waveform1.vwf.vt(1495): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.
+# 
+# ** Warning: (vsim-3722) Waveform1.vwf.vt(1495): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.
+# 
+# Loading altera_ver.PRIM_GDFF_LOW
+# Loading timing data from ex03_v.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /ex03_vlg_vec_tst File: Waveform1.vwf.vt
+# ERROR! Vector Mismatch for output port P_UPCO :: @time = 1005000.000 ps
+#      Expected value = 0
+#      Real value = 1
+# ERROR! Vector Mismatch for output port P_RAMO :: @time = 1020000.000 ps
+#      Expected value = 0
+#      Real value = 1
+# ERROR! Vector Mismatch for output port P_RO :: @time = 1050000.000 ps
+#      Expected value = 0
+#      Real value = 1
+# ERROR! Vector Mismatch for output port R2O[8] :: @time = 1185000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111100000000
+# ERROR! Vector Mismatch for output port R2O[9] :: @time = 1185000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111100000000
+# ERROR! Vector Mismatch for output port R2O[10] :: @time = 1185000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111100000000
+# ERROR! Vector Mismatch for output port R2O[11] :: @time = 1185000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111100000000
+# ERROR! Vector Mismatch for output port R2O[12] :: @time = 1185000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111100000000
+# ERROR! Vector Mismatch for output port R2O[13] :: @time = 1185000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111100000000
+# ERROR! Vector Mismatch for output port R2O[14] :: @time = 1185000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111100000000
+# ERROR! Vector Mismatch for output port R2O[15] :: @time = 1185000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111100000000
+# ERROR! Vector Mismatch for output port R2O[3] :: @time = 1890000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111100001000
+# ERROR! Vector Mismatch for output port R2O[1] :: @time = 1905000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R2O[4] :: @time = 1905000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R2O[6] :: @time = 1905000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port PCO[0] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 0000000000001101
+# ERROR! Vector Mismatch for output port PCO[2] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 0000000000001101
+# ERROR! Vector Mismatch for output port PCO[3] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 0000000000001101
+# ERROR! Vector Mismatch for output port R6O[1] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R6O[3] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R6O[4] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R6O[6] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R6O[8] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R6O[9] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R6O[10] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R6O[11] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R6O[12] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R6O[13] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R6O[14] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R6O[15] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[1] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[3] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[4] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[6] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[8] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[9] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[10] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[11] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[12] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[13] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[14] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port R7O[15] :: @time = 10005000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111101011010
+# ERROR! Vector Mismatch for output port PCO[1] :: @time = 10305000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 0000000000001110
+# ERROR! Vector Mismatch for output port PCO[4] :: @time = 11850000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 0000000000010010
+# ERROR! Vector Mismatch for output port R6O[0] :: @time = 12930000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1110010110111101
+# ERROR! Vector Mismatch for output port R6O[2] :: @time = 12930000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1110010110111101
+# ERROR! Vector Mismatch for output port R6O[5] :: @time = 12930000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1110010110111101
+# ERROR! Vector Mismatch for output port R6O[7] :: @time = 12930000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1110010110111101
+# ERROR! Vector Mismatch for output port PCO[5] :: @time = 23130000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 0000000000100000
+# ERROR! Vector Mismatch for output port R7O[0] :: @time = 33570000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111111101111
+# ERROR! Vector Mismatch for output port R7O[2] :: @time = 33570000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111111101111
+# ERROR! Vector Mismatch for output port R7O[5] :: @time = 33570000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111111101111
+# ERROR! Vector Mismatch for output port R7O[7] :: @time = 33570000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111111101111
+# ERROR! Vector Mismatch for output port R2O[0] :: @time = 44385000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111111111111
+# ERROR! Vector Mismatch for output port R2O[2] :: @time = 44385000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111111111111
+# ERROR! Vector Mismatch for output port R2O[5] :: @time = 44385000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111111111111
+# ERROR! Vector Mismatch for output port R2O[7] :: @time = 44385000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111111111111
+# ERROR! Vector Mismatch for output port PCO[6] :: @time = 47010000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 0000000001000010
+# ERROR! Vector Mismatch for output port PCO[7] :: @time = 47610000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111110000000
+# ERROR! Vector Mismatch for output port PCO[8] :: @time = 47610000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111110000000
+# ERROR! Vector Mismatch for output port PCO[9] :: @time = 47610000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111110000000
+# ERROR! Vector Mismatch for output port PCO[10] :: @time = 47610000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111110000000
+# ERROR! Vector Mismatch for output port PCO[11] :: @time = 47610000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111110000000
+# ERROR! Vector Mismatch for output port PCO[12] :: @time = 47610000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111110000000
+# ERROR! Vector Mismatch for output port PCO[13] :: @time = 47610000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111110000000
+# ERROR! Vector Mismatch for output port PCO[14] :: @time = 47610000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111110000000
+# ERROR! Vector Mismatch for output port PCO[15] :: @time = 47610000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = 1111111110000000
+#          67 mismatched vectors : Simulation failed !
+# ** Note: $finish    : Waveform1.vwf.vt(1459)
+#    Time: 100 us  Iteration: 0  Instance: /ex03_vlg_vec_tst/tb_out

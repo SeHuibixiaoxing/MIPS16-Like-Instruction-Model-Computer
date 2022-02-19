@@ -1,0 +1,21 @@
+module multiunit(
+	input A,
+	input B,
+	input C,
+	input M,
+	
+	output C4,
+	output M4
+);
+
+add1 add(
+	.A(M),
+	.B(A&B),
+	.C(C),
+	.S(M4)
+	.C4(C4)
+);
+
+
+
+endmodule;

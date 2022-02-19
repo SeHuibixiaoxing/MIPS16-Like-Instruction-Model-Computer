@@ -1,0 +1,10 @@
+module multi16row(
+	input[15:0] A ,
+	input[15:0] B,		
+	input[15:0] C,		//进位输入
+	input[15:0] M,		//部分积输入
+	
+	output[15:0] A4,
+	output[15:0] C4,	//进位输出
+	output P				//结果输出
+)

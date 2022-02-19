@@ -1,0 +1,397 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "P_RO",
+					"strict" : false
+				},
+				{
+					"name" : "P_RAMO",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[8]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[9]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[10]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[11]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[12]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[13]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[14]",
+					"strict" : false
+				},
+				{
+					"name" : "PCO[15]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[0]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[1]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[2]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[3]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[4]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[5]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[6]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[7]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[8]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[9]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[10]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[11]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[12]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[13]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[14]",
+					"strict" : false
+				},
+				{
+					"name" : "R4O[15]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[0]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[1]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[2]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[3]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[4]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[5]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[6]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[7]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[8]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[9]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[10]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[11]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[12]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[13]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[14]",
+					"strict" : false
+				},
+				{
+					"name" : "R5O[15]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[0]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[1]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[2]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[3]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[4]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[5]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[6]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[7]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[8]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[9]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[10]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[11]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[12]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[13]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[14]",
+					"strict" : false
+				},
+				{
+					"name" : "R6O[15]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[0]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[1]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[2]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[3]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[4]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[5]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[6]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[7]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[8]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[9]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[10]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[11]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[12]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[13]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[14]",
+					"strict" : false
+				},
+				{
+					"name" : "R7O[15]",
+					"strict" : false
+				},
+				{
+					"name" : "T0O",
+					"strict" : false
+				},
+				{
+					"name" : "T1O",
+					"strict" : false
+				},
+				{
+					"name" : "T2O",
+					"strict" : false
+				},
+				{
+					"name" : "T3O",
+					"strict" : false
+				},
+				{
+					"name" : "W0O",
+					"strict" : false
+				},
+				{
+					"name" : "W1O",
+					"strict" : false
+				},
+				{
+					"name" : "CPPCO",
+					"strict" : false
+				},
+				{
+					"name" : "OPEN",
+					"strict" : false
+				},
+				{
+					"name" : "CLK_SINGLESTEP",
+					"strict" : false
+				},
+				{
+					"name" : "CLK_CONTINUOUS",
+					"strict" : false
+				},
+				{
+					"name" : "G",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

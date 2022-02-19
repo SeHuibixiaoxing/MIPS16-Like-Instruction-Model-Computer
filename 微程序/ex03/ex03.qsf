@@ -1,0 +1,101 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+# Date created = 09:30:15  March 30, 2021
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		ex03_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE6E22C8
+set_global_assignment -name TOP_LEVEL_ENTITY ex03
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:30:15  MARCH 30, 2021"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "D:/wzy/WeiChengXu/ex03/simulation/qsim/" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_simulation
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name VERILOG_FILE register16.v
+set_global_assignment -name VERILOG_FILE ex03.v
+set_global_assignment -name VERILOG_FILE CPU.v
+set_global_assignment -name QIP_FILE ram.qip
+set_global_assignment -name VERILOG_FILE selector8.v
+set_global_assignment -name BDF_FILE test.bdf
+set_global_assignment -name VERILOG_FILE ALU.v
+set_global_assignment -name VERILOG_FILE shift16.v
+set_global_assignment -name VERILOG_FILE complement.v
+set_global_assignment -name VERILOG_FILE multiplication16.v
+set_global_assignment -name VERILOG_FILE add1.v
+set_global_assignment -name VERILOG_FILE multiunit.v
+set_global_assignment -name VERILOG_FILE multi16row.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name VERILOG_FILE nextAddress.v
+set_global_assignment -name VERILOG_FILE threeToEight.v
+set_global_assignment -name VERILOG_FILE twoToFour.v
+set_global_assignment -name VERILOG_FILE selector8_2.v
+set_global_assignment -name BDF_FILE Block1.bdf
+set_global_assignment -name MIF_FILE rom.mif
+set_global_assignment -name QIP_FILE rom.qip
+set_global_assignment -name MIF_FILE ram.mif
+set_global_assignment -name VECTOR_WAVEFORM_FILE ../../intelFPGA_lite/20.1/modelsim_ase/Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ../../intelFPGA_lite/20.1/modelsim_ase/Waveform10.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name CDF_FILE output_files/Chain2.cdf
+set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform3.vwf
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_52 -to G
+set_location_assignment PIN_55 -to OPEN
+set_location_assignment PIN_64 -to CLK_SINGLESTEP
+set_location_assignment PIN_90 -to CLK_CONTINUOUS
+set_location_assignment PIN_60 -to PCO[0]
+set_location_assignment PIN_65 -to PCO[1]
+set_location_assignment PIN_70 -to PCO[2]
+set_location_assignment PIN_74 -to PCO[3]
+set_location_assignment PIN_77 -to PCO[4]
+set_location_assignment PIN_83 -to PCO[5]
+set_location_assignment PIN_42 -to PCO[6]
+set_location_assignment PIN_39 -to PCO[7]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,0 +1,262 @@
+Determining the location of the ModelSim executable...
+
+Using: /home/user/intelFPGA_lite/18.1/modelsim_ase/linuxaloem/
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ex04 -c ex04 --vector_source="/home/user/jizu_keshe/YingBuXian/ex04/Waveform.vwf" --testbench_file="/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim/Waveform.vwf.vt"
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition    Info: Copyright (C) 2018  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and its AMPP partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details.    Info: Processing started: Tue May 18 12:42:04 2021Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ex04 -c ex04 --vector_source=/home/user/jizu_keshe/YingBuXian/ex04/Waveform.vwf --testbench_file=/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim/Waveform.vwf.vtWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+ng test bench files
+test bench files
+Completed successfully. 
+
+Completed successfully. 
+
+**** Generating the timing simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim/" ex04 -c ex04
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition    Info: Copyright (C) 2018  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and its AMPP partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details.    Info: Processing started: Tue May 18 12:42:05 2021Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim/ ex04 -c ex04Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file ex04_6_1200mv_85c_slow.vo in folder "/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ex04_6_1200mv_0c_slow.vo in folder "/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ex04_min_1200mv_0c_fast.vo in folder "/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ex04.vo in folder "/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ex04_6_1200mv_85c_v_slow.sdo in folder "/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ex04_6_1200mv_0c_v_slow.sdo in folder "/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ex04_min_1200mv_0c_v_fast.sdo in folder "/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file ex04_v.sdo in folder "/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 1075 megabytes    Info: Processing ended: Tue May 18 12:42:07 2021    Info: Elapsed time: 00:00:02    Info: Total CPU time (on all processors): 00:00:02
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+/home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim/ex04.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+/home/user/intelFPGA_lite/18.1/modelsim_ase/linuxaloem//vsim -c -do ex04.do
+
+Reading pref.tcl
+# 10.5b
+# do ex04.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016# Start time: 12:42:08 on May 18,2021
+# vlog -work work ex04.vo 
+# -- Compiling module ex04
+# # Top level modules:# 	ex04
+# End time: 12:42:08 on May 18,2021, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:42:08 on May 18,2021# vlog -work work Waveform.vwf.vt 
+# -- Compiling module ex04_vlg_vec_tst
+# # Top level modules:# 	ex04_vlg_vec_tst
+# End time: 12:42:08 on May 18,2021, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ex04_vlg_vec_tst # Start time: 12:42:08 on May 18,2021# Loading work.ex04_vlg_vec_tst# Loading work.ex04# Loading cycloneive_ver.cycloneive_lcell_comb# Loading cycloneive_ver.cycloneive_io_obuf# Loading cycloneive_ver.cycloneive_io_ibuf# Loading altera_ver.dffeas# Loading cycloneive_ver.cycloneive_clkctrl# Loading cycloneive_ver.cycloneive_mux41# Loading cycloneive_ver.cycloneive_ena_reg# Loading cycloneive_ver.cycloneive_jtag# Loading cycloneive_ver.cycloneive_ram_block# Loading cycloneive_ver.cycloneive_ram_register# Loading cycloneive_ver.cycloneive_ram_pulse_generator# SDF 10.5b Compiler 2016.10 Oct  5 2016# Loading instances from ex04_v.sdo# ** Warning: (vsim-3017) Waveform.vwf.vt(53): [TFMPC] - Too few port connections. Expected 22, found 18.#    Time: 0 ps  Iteration: 0  Instance: /ex04_vlg_vec_tst/i1 File: ex04.vo# ** Warning: (vsim-3722) Waveform.vwf.vt(53): [TFMPC] - Missing connection for port 'altera_reserved_tms'.# ** Warning: (vsim-3722) Waveform.vwf.vt(53): [TFMPC] - Missing connection for port 'altera_reserved_tck'.# ** Warning: (vsim-3722) Waveform.vwf.vt(53): [TFMPC] - Missing connection for port 'altera_reserved_tdi'.# ** Warning: (vsim-3722) Waveform.vwf.vt(53): [TFMPC] - Missing connection for port 'altera_reserved_tdo'.# Loading altera_ver.PRIM_GDFF_LOW# Loading timing data from ex04_v.sdo# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.#    Time: 0 ps  Iteration: 0  Instance: /ex04_vlg_vec_tst File: Waveform.vwf.vt
+# after#25
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.# ** Error: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4542): $hold( posedge clk &&& reset:16369805 ps, d:16369818 ps, 187 ps );#    Time: 16369818 ps  Iteration: 0  Instance: /ex04_vlg_vec_tst/i1/\cpu|RAM|altsyncram_component|auto_generated|altsyncram1|ram_block3a0 /datain_a_register# ** Note: $finish    : Waveform.vwf.vt(76)#    Time: 100 us  Iteration: 0  Instance: /ex04_vlg_vec_tst
+# End time: 12:42:09 on May 18,2021, Elapsed time: 0:00:01# Errors: 1, Warnings: 6
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading /home/user/jizu_keshe/YingBuXian/ex04/Waveform.vwf...
+
+Reading /home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim/ex04.msim.vcd...
+
+Processing channel transitions... 
+
+Warning: IRO[15] - signal not found in VCD.
+
+Warning: IRO[14] - signal not found in VCD.
+
+Warning: IRO[13] - signal not found in VCD.
+
+Warning: IRO[12] - signal not found in VCD.
+
+Warning: IRO[11] - signal not found in VCD.
+
+Warning: IRO[10] - signal not found in VCD.
+
+Warning: IRO[9] - signal not found in VCD.
+
+Warning: IRO[8] - signal not found in VCD.
+
+Warning: IRO[7] - signal not found in VCD.
+
+Warning: IRO[6] - signal not found in VCD.
+
+Warning: IRO[5] - signal not found in VCD.
+
+Warning: IRO[4] - signal not found in VCD.
+
+Warning: IRO[3] - signal not found in VCD.
+
+Warning: IRO[2] - signal not found in VCD.
+
+Warning: IRO[1] - signal not found in VCD.
+
+Warning: IRO[0] - signal not found in VCD.
+
+Warning: MARO[15] - signal not found in VCD.
+
+Warning: MARO[14] - signal not found in VCD.
+
+Warning: MARO[13] - signal not found in VCD.
+
+Warning: MARO[12] - signal not found in VCD.
+
+Warning: MARO[11] - signal not found in VCD.
+
+Warning: MARO[10] - signal not found in VCD.
+
+Warning: MARO[9] - signal not found in VCD.
+
+Warning: MARO[8] - signal not found in VCD.
+
+Warning: MARO[7] - signal not found in VCD.
+
+Warning: MARO[6] - signal not found in VCD.
+
+Warning: MARO[5] - signal not found in VCD.
+
+Warning: MARO[4] - signal not found in VCD.
+
+Warning: MARO[3] - signal not found in VCD.
+
+Warning: MARO[2] - signal not found in VCD.
+
+Warning: MARO[1] - signal not found in VCD.
+
+Warning: MARO[0] - signal not found in VCD.
+
+Warning: R0O[15] - signal not found in VCD.
+
+Warning: R0O[14] - signal not found in VCD.
+
+Warning: R0O[13] - signal not found in VCD.
+
+Warning: R0O[12] - signal not found in VCD.
+
+Warning: R0O[11] - signal not found in VCD.
+
+Warning: R0O[10] - signal not found in VCD.
+
+Warning: R0O[9] - signal not found in VCD.
+
+Warning: R0O[8] - signal not found in VCD.
+
+Warning: R0O[7] - signal not found in VCD.
+
+Warning: R0O[6] - signal not found in VCD.
+
+Warning: R0O[5] - signal not found in VCD.
+
+Warning: R0O[4] - signal not found in VCD.
+
+Warning: R0O[3] - signal not found in VCD.
+
+Warning: R0O[2] - signal not found in VCD.
+
+Warning: R0O[1] - signal not found in VCD.
+
+Warning: R0O[0] - signal not found in VCD.
+
+Warning: R1O[15] - signal not found in VCD.
+
+Warning: R1O[14] - signal not found in VCD.
+
+Warning: R1O[13] - signal not found in VCD.
+
+Warning: R1O[12] - signal not found in VCD.
+
+Warning: R1O[11] - signal not found in VCD.
+
+Warning: R1O[10] - signal not found in VCD.
+
+Warning: R1O[9] - signal not found in VCD.
+
+Warning: R1O[8] - signal not found in VCD.
+
+Warning: R1O[7] - signal not found in VCD.
+
+Warning: R1O[6] - signal not found in VCD.
+
+Warning: R1O[5] - signal not found in VCD.
+
+Warning: R1O[4] - signal not found in VCD.
+
+Warning: R1O[3] - signal not found in VCD.
+
+Warning: R1O[2] - signal not found in VCD.
+
+Warning: R1O[1] - signal not found in VCD.
+
+Warning: R1O[0] - signal not found in VCD.
+
+Warning: R2O[15] - signal not found in VCD.
+
+Warning: R2O[14] - signal not found in VCD.
+
+Warning: R2O[13] - signal not found in VCD.
+
+Warning: R2O[12] - signal not found in VCD.
+
+Warning: R2O[11] - signal not found in VCD.
+
+Warning: R2O[10] - signal not found in VCD.
+
+Warning: R2O[9] - signal not found in VCD.
+
+Warning: R2O[8] - signal not found in VCD.
+
+Warning: R2O[7] - signal not found in VCD.
+
+Warning: R2O[6] - signal not found in VCD.
+
+Warning: R2O[5] - signal not found in VCD.
+
+Warning: R2O[4] - signal not found in VCD.
+
+Warning: R2O[3] - signal not found in VCD.
+
+Warning: R2O[2] - signal not found in VCD.
+
+Warning: R2O[1] - signal not found in VCD.
+
+Warning: R2O[0] - signal not found in VCD.
+
+Warning: R3O[15] - signal not found in VCD.
+
+Warning: R3O[14] - signal not found in VCD.
+
+Warning: R3O[13] - signal not found in VCD.
+
+Warning: R3O[12] - signal not found in VCD.
+
+Warning: R3O[11] - signal not found in VCD.
+
+Warning: R3O[10] - signal not found in VCD.
+
+Warning: R3O[9] - signal not found in VCD.
+
+Warning: R3O[8] - signal not found in VCD.
+
+Warning: R3O[7] - signal not found in VCD.
+
+Warning: R3O[6] - signal not found in VCD.
+
+Warning: R3O[5] - signal not found in VCD.
+
+Warning: R3O[4] - signal not found in VCD.
+
+Warning: R3O[3] - signal not found in VCD.
+
+Warning: R3O[2] - signal not found in VCD.
+
+Warning: R3O[1] - signal not found in VCD.
+
+Warning: R3O[0] - signal not found in VCD.
+
+Writing the resulting VWF to /home/user/jizu_keshe/YingBuXian/ex04/simulation/qsim/ex04_20210518124209.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.
